@@ -15,7 +15,9 @@
     <!-- Flowbite -->
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" /> -->
 
-    <title>Seventeenvis Admin</title>
+    <title>Dhistoire Admin</title>
+
+    @livewireStyles
 </head>
 
 <body class="bg-gray-100">
@@ -47,6 +49,7 @@
 
     <!-- Flowbite -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script> -->
+    @livewireScripts
 
 </body>
 

@@ -37,4 +37,8 @@ Route::controller(CategoryController::class)->group(function() {
     Route::get('/category', 'index')->name('category');
 });
 
+Route::controller(CategoryController::class)->group(function() {
+    Route::get('/category', 'index')->name('category');
+});
+
 require __DIR__.'/auth.php';
