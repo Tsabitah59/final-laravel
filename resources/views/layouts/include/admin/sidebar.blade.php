@@ -33,6 +33,20 @@
         </a>
         <!-- end link -->
 
+        <!-- link -->
+        <a href="{{ route('story') }}" class="mb-3 capitalize font-medium hover:text-teal-600 transition ease-in-out duration-500">
+            <i class="ri-book-fill mr-2"></i>
+            User
+        </a>
+        <!-- end link -->
+
+        <!-- link -->
+        <a href="{{ route('story') }}" class="mb-3 capitalize font-medium hover:text-teal-600 transition ease-in-out duration-500">
+            <i class="ri-book-fill mr-2"></i>
+            Setting
+        </a>
+        <!-- end link -->
+
 
 
 
