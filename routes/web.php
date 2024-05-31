@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\StoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Livewire\Livewire;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/category', App\Livewire\Admin\Category\Index::class)->name('category');
+// Route::get('/category', App\Livewire\Admin\Category\Index::class)->name('category');
+
+Route::controller(CategoryController::class)->group(function() {
+    Route::get('/category', 'index')->name('category');
+});
+
+Route::controller(StoryController::class)->group(function() {
+    Route::get('/story', 'index')->name('story');
+});
 
 // Route::controller(Stoeyy::class)->group(function() {
 //     Route::get('/category', 'index')->name('category');

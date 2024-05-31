@@ -1,8 +1,8 @@
 <div class="bg-gray-100 flex-1 p-6 md:mt-16">
 
     <div class="flex justify-between mb-5 items-center">
-        <h1 class="text-3xl">Category</h1>
-        <button class="btn-shadow">Add Category</button>
+        <h1 class="text-3xl">Story</h1>
+        <button class="btn-shadow">Add Story</button>
     </div>
 
     <hr>
@@ -13,6 +13,9 @@
                 <tr>
                     <th scope="col" class="px-6 py-3 text-lg">
                         ID
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-lg">
+                        Category
                     </th>
                     <th scope="col" class="px-6 py-3 text-lg">
                         Name
@@ -31,6 +34,9 @@
                     <td class="px-6 py-4">
                         Silver
                     </td>
+                    <td class="px-6 py-4">
+                        Silver
+                    </td>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         Apple MacBook Pro 17"
                     </th>
@@ -45,7 +51,4 @@
             </tbody>
         </table>
     </div>
-
-
-
 </div>
