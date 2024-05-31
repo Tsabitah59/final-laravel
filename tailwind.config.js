@@ -14,6 +14,11 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+
+            colors:{
+                satu: "#1B3764",
+                dua: "#FFCA42"
+            }
         },
     },
 
