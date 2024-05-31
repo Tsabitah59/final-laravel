@@ -33,12 +33,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::controller(CategoryController::class)->group(function() {
-    Route::get('/category', 'index')->name('category');
-});
+Route::get('/category', App\Livewire\Admin\Category\Index::class)->name('category');
 
-Route::controller(CategoryController::class)->group(function() {
-    Route::get('/category', 'index')->name('category');
-});
+// Route::controller(Stoeyy::class)->group(function() {
+//     Route::get('/category', 'index')->name('category');
+// });
 
 require __DIR__.'/auth.php';
