@@ -1,8 +1,10 @@
 <div class="bg-gray-100 flex-1 p-6 md:mt-16">
 
+    @include('livewire.admin.category.modal')
+
     <div class="flex justify-between mb-5 items-center">
         <h1 class="text-3xl">Category</h1>
-        <button class="btn-shadow">Add Category</button>
+        <button class="btn-shadow showModal">Add Category</button>
     </div>
 
     <hr>
@@ -45,7 +47,22 @@
             </tbody>
         </table>
     </div>
-
-
-
 </div>
+
+@push('script')
+<script>
+    const modal = document.querySelector('.modal');
+    const showModal = document.querySelector('.showModal');
+    const closeModal = document.querySelectorAll('.closeModal');
+
+    showModal.addEventListener('click', function() {
+        modal.classList.remove('hidden')
+    });
+
+    closeModal.forEach(close => {
+        close.addEventListener('click', function() {
+            modal.classList.add('hidden')
+        });
+    });
+</script>
+@endpush

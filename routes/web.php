@@ -8,6 +8,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 
+use function Ramsey\Uuid\v1;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,4 +52,5 @@ Route::controller(StoryController::class)->group(function() {
 Route::controller(UserController::class)->group(function() {
    Route::get('/user', 'index')->name('user'); 
 });
+
 require __DIR__.'/auth.php';
