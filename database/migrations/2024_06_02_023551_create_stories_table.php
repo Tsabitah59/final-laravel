@@ -17,7 +17,18 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('name');
             $table->string('slug');
-            $table->string('name');
+            $table->mediumText('synopsis');
+            $table->string('image');
+
+            $table->string('meta_title');
+            $table->string('meta_keyword');
+            $table->string('meta_description');
+
+            $table->tinyInteger('trending')->default('0')->comment('0=no, 1=trending');
+            $table->tinyInteger('status')->default('0')->comment('0=visible, 1=trending');
+
+            // Relasi
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
