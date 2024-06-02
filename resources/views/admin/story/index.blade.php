@@ -1,5 +1,5 @@
 @extends('layouts.adminhome')
 
 @section('content')
-<livewire:admin.category.index></livewire>
+<livewire:admin.story.index></livewire>
 @endsection
