@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\StoryController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -49,4 +50,8 @@ Route::controller(StoryController::class)->group(function() {
 //     Route::get('/category', 'index')->name('category');
 // });
 
+// User
+Route::controller(UserController::class)->group(function() {
+   Route::get('/user', 'index')->name('user'); 
+});
 require __DIR__.'/auth.php';
