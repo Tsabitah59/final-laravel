@@ -46,10 +46,6 @@ Route::controller(StoryController::class)->group(function() {
     Route::get('/story', 'index')->name('story');
 });
 
-// Route::controller(Stoeyy::class)->group(function() {
-//     Route::get('/category', 'index')->name('category');
-// });
-
 // User
 Route::controller(UserController::class)->group(function() {
    Route::get('/user', 'index')->name('user'); 
