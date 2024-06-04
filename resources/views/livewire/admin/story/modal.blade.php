@@ -9,9 +9,21 @@
 
         <hr>
 
-        <form class="mt-5" wire:submit.prevent="storeCategory">
+        <form class="mt-5" wire:submit.prevent="storeStory">
             <div class="overflow-y-scroll h-96">
                 <div class="atas">
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-medium">Select Category</label>
+                        <select wire:model.defer="category_id" class=" text-slate-400 bg-gray-50 border border-gray-300 rounded-lg block w-full px-5 py-2" required>
+                            @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('name')
+                        <small class="text-red-600">{{ $message }}</small>
+                        @enderror
+                    </div>
+
                     <div class="mb-4">
                         <label class="block mb-2 text-sm font-medium">Story Title</label>
                         <input type="text" wire:model.defer="name" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Title" />
@@ -38,7 +50,7 @@
                       
                     <div class="mb-4">
                         <label class="block mb-2 text-sm font-medium">Image</label>
-                        <input type="file" wire:model.defer="image" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" required />
+                        <input type="file" wire:model.defer="image" accept="image/jpeg, image/jpg, image/png, image/gif" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" required />
                         @error('image')
                         <small class="text-red-600">{{ $message }}</small>
                         @enderror

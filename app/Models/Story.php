@@ -23,4 +23,8 @@ class Story extends Model
         'trending',
         'status',
     ];
+
+    public function category() {
+        return $this->belongsTo(Category::class, 'category_id', 'category');
+    }
 }
