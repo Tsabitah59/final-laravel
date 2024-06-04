@@ -41,13 +41,8 @@
                         {{ $category->status == '1' ? 'Hidden' : 'Visible' }}
                     </td>
                     <td class="px-6 py-4 flex gap-3">
-<<<<<<< HEAD
-                        <a href="#" wire:click="editBrand" data-bs-target="#updateCategoryModal" class="font-medium text-white bg-green-600 p-1 hover:font-bold">Edit</a>
-                        <a href="#" class="font-medium text-white bg-red-600 p-1 hover:font-bold">Delete</a>
-=======
-                        <a href="#" wire:click="editCategory({{ $category->id }})" class="font-bold text-green-600 hover:underline showModal">Edit</a>
-                        <a href="#" class="font-bold text-red-600 hover:underline">Delete</a>
->>>>>>> d5bc36c820757da821b535431498ac47e257b53b
+                        <a href="#" wire:click="editCategory({{ $category->id }})" data-bs-target="#updateCategoryModal" class="font-medium text-white bg-green-500 px-2 py-1 hover:font-bold rounded">Edit</a>
+                        <a href="#" class="font-medium text-white bg-red-600 px-2 py-1 hover:font-bold rounded">Delete</a>
                     </td>
                 </tr>
                 @empty
@@ -60,17 +55,15 @@
 
 @push('script')
 <script>
-    const modal = document.querySelector('.modal');
-    const showModal = document.querySelector('.showModal');
-    const closeModal = document.querySelectorAll('.closeModal');
-
-    showModal.addEventListener('click', function() {
-        modal.classList.remove('hidden')
+    document.querySelectorAll('.showModal').forEach(button => {
+        button.addEventListener('click', function() {
+            document.querySelector('.modal').classList.remove('hidden');
+        });
     });
 
-    closeModal.forEach(close => {
+    document.querySelectorAll('.closeModal').forEach(close => {
         close.addEventListener('click', function() {
-            modal.classList.add('hidden')
+            document.querySelector('.modal').classList.add('hidden');
         });
     });
 </script>
