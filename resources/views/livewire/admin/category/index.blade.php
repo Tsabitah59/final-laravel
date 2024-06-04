@@ -29,21 +29,25 @@
             </thead>
 
             <tbody class="bg-white border border-gray-300">
+                @forelse($categories as $category)
                 <tr class="border-b-gray-300">
                     <td class="px-6 py-4">
-                        Silver
+                        {{ $category->id }}
                     </td>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Apple MacBook Pro 17"
+                        {{ $category->name }}
                     </th>
                     <td class="px-6 py-4">
-                        Laptop
+                        {{ $category->status == '1' ? 'Hidden' : 'Visible' }}
                     </td>
                     <td class="px-6 py-4 flex gap-3">
-                        <a href="#" class="font-bold text-green-600 hover:underline">Edit</a>
+                        <a href="#" wire:click="editBrand" data-bs-target="#updateCategoryModal" class="font-bold text-green-600 hover:underline">Edit</a>
                         <a href="#" class="font-bold text-red-600 hover:underline">Delete</a>
                     </td>
                 </tr>
+                @empty
+                <p>No Category Found</p>
+                @endforelse
             </tbody>
         </table>
     </div>
@@ -64,5 +68,9 @@
             modal.classList.add('hidden')
         });
     });
+
+    window.addEventListener('closeModal', event => {
+        $('#addCategoryModal').modal('hide');
+    })
 </script>
 @endpush
