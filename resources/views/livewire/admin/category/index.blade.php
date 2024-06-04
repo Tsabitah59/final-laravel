@@ -41,7 +41,7 @@
                         {{ $category->status == '1' ? 'Hidden' : 'Visible' }}
                     </td>
                     <td class="px-6 py-4 flex gap-3">
-                        <a href="#" wire:click="editBrand" data-bs-target="#updateCategoryModal" class="font-bold text-green-600 hover:underline">Edit</a>
+                        <a href="#" wire:click="editCategory({{ $category->id }})" class="font-bold text-green-600 hover:underline showModal">Edit</a>
                         <a href="#" class="font-bold text-red-600 hover:underline">Delete</a>
                     </td>
                 </tr>
@@ -68,9 +68,5 @@
             modal.classList.add('hidden')
         });
     });
-
-    window.addEventListener('closeModal', event => {
-        $('#addCategoryModal').modal('hide');
-    })
 </script>
 @endpush

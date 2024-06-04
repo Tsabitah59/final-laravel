@@ -11,7 +11,7 @@ class Index extends Component
 {
     use WithPagination;
 
-    public $name, $slug, $description, $meta_title, $meta_keyword, $meta_description, $status;
+    public $category_id, $name, $slug, $description, $meta_title, $meta_keyword, $meta_description, $status;
 
     public function rules() {
         return [
@@ -68,6 +68,22 @@ class Index extends Component
 
     public function openModal() {
         $this->resetInput();
+    }
+
+    public function editCategory($category_id) {
+        $this->emit('openModal', $category_id);
+        
+        $this->category_id = $category_id;
+
+        // Editable Data
+        $category = Category::findOrFail($category_id);
+        $this->name = $category->name; 
+        $this->slug = $category->slug; 
+        $this->description = $category->description; 
+
+        $this->meta_title = $category->meta_title; 
+        $this->meta_keyword = $category->meta_keyword; 
+        $this->meta_description = $category->meta_description; 
     }
 
     public function render() {
