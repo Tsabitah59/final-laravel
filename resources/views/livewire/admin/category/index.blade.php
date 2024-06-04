@@ -41,8 +41,8 @@
                         {{ $category->status == '1' ? 'Hidden' : 'Visible' }}
                     </td>
                     <td class="px-6 py-4 flex gap-3">
-                        <a href="#" wire:click="editBrand" data-bs-target="#updateCategoryModal" class="font-bold text-green-600 hover:underline">Edit</a>
-                        <a href="#" class="font-bold text-red-600 hover:underline">Delete</a>
+                        <a href="#" wire:click="editBrand" data-bs-target="#updateCategoryModal" class="font-medium text-white bg-green-600 p-1 hover:font-bold">Edit</a>
+                        <a href="#" class="font-medium text-white bg-red-600 p-1 hover:font-bold">Delete</a>
                     </td>
                 </tr>
                 @empty

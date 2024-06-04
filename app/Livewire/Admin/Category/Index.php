@@ -10,6 +10,8 @@ use Illuminate\Support\Str;
 class Index extends Component
 {
     use WithPagination;
+    protected $paginationTheme = 'tailwind';
+    public $category_id;
 
     public $name, $slug, $description, $meta_title, $meta_keyword, $meta_description, $status;
 

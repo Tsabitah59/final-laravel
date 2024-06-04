@@ -2,7 +2,7 @@
 
     <div class="flex justify-between mb-5 items-center">
         <h1 class="text-3xl">Story</h1>
-        <button class="btn-shadow">Add Story</button>
+        <button class="btn-shadow showModal">Add Story</button>
     </div>
 
     <hr>
@@ -52,3 +52,22 @@
         </table>
     </div>
 </div>
+
+
+@push('script')
+<script>
+    const modal = document.querySelector('.modal');
+    const showModal = document.querySelector('.showModal');
+    const closeModal = document.querySelectorAll('.closeModal');
+
+    showModal.addEventListener('click', function() {
+        modal.classList.remove('hidden')
+    });
+
+    closeModal.forEach(close => {
+        close.addEventListener('click', function() {
+            modal.classList.add('hidden')
+        });
+    });
+</script>
+@endpush
