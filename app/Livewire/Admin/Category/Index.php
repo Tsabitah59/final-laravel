@@ -71,21 +71,21 @@ class Index extends Component
         $this->resetInput();
     }
 
-    public function editCategory($id) {
-        // $this->emit('openModal', $id);
 
-        $this->id = $id;
+    
+    // public function editCategory($id) {
+    //     $this->id = $id;
 
-        // Editable Data
-        $category = Category::findOrFail($id);
-        $this->name = $category->name; 
-        $this->slug = $category->slug; 
-        $this->description = $category->description; 
+    //     // Editable Data
+    //     $category = Category::findOrFail($id);
+    //     $this->name = $category->name; 
+    //     $this->slug = $category->slug; 
+    //     $this->description = $category->description; 
 
-        $this->meta_title = $category->meta_title; 
-        $this->meta_keyword = $category->meta_keyword; 
-        $this->meta_description = $category->meta_description; 
-    }
+    //     $this->meta_title = $category->meta_title; 
+    //     $this->meta_keyword = $category->meta_keyword; 
+    //     $this->meta_description = $category->meta_description; 
+    // }
 
     public function render() {
         $categories = Category::orderBy('id', 'DESC')->paginate(10);

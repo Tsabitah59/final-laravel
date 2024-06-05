@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->mediumText('synopsis');
+            $table->longText('story');
             $table->string('image');
 
             $table->string('meta_title');

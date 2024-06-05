@@ -47,6 +47,14 @@
                         <small class="text-red-600">{{ $message }}</small>
                         @enderror
                     </div>
+
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-medium">The Story</label>
+                        <textarea wire:model.defer="story" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Story" required></textarea>
+                        @error('story')
+                        <small class="text-red-600">{{ $message }}</small>
+                        @enderror
+                    </div>
                       
                     <div class="mb-4">
                         <label class="block mb-2 text-sm font-medium">Image</label>
@@ -89,7 +97,7 @@
 
                 <div class="mb-4 flex items-start">
                     <label class="block mb-2 text-sm font-medium mr-3">Trending</label>
-                    <input type="checkbox" wire:model.defer="status" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-5 h-5" />
+                    <input type="checkbox" wire:model.defer="trending" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-5 h-5" />
                 </div>
 
                 <div class="mb-4 flex items-start">

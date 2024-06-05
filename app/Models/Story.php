@@ -16,6 +16,7 @@ class Story extends Model
         'name',
         'slug',
         'synopsis',
+        'story',
         'image',
         'meta_title',
         'meta_keyword',
