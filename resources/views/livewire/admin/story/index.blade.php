@@ -40,7 +40,6 @@
                     </td>
 
                     <td class="px-6 py-4">
-                        {{ $story->category->name }}
                     </td>
 
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -50,8 +49,8 @@
                     {{ $story->status == '1' ? 'Hidden' : 'Visible' }}
                     </td>
                     <td class="px-6 py-4 flex gap-3">
-                        <a href="#" class="font-bold text-green-600 hover:underline">Edit</a>
-                        <a href="#" class="font-bold text-red-600 hover:underline">Delete</a>
+                        <a href="#" class="font-medium text-white bg-green-500 px-2 py-1 hover:font-bold rounded">Edit</a>
+                        <a href="#" class="font-medium text-white bg-red-600 px-2 py-1 hover:font-bold rounded">Delete</a>
                     </td>
                 </tr>
                 @empty
