@@ -100,6 +100,18 @@ class Index extends Component
         
     // }
 
+    
+    public function destroyStory($id) {
+
+        // dd($id);
+
+        if($id){
+            $deleteStor = Story::find($id);
+            $deleteStor->delete();
+            session()->flash('message', 'Category Deleted Successfully');
+        }
+    }
+
     public function render()
     {
         $categories = Category::where('status', '0')->get();
