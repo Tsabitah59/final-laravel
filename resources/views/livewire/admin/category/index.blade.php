@@ -2,6 +2,10 @@
 
     @include('livewire.admin.category.modal')
 
+    @if (session('message'))
+            <div class="alert alert-default mb-5">{{ session('message') }}</div>
+    @endif
+
     <div class="flex justify-between mb-5 items-center">
         <h1 class="text-3xl">Category</h1>
         <button class="btn-shadow showModal">Add Category</button>
@@ -41,8 +45,14 @@
                         {{ $category->status == '1' ? 'Hidden' : 'Visible' }}
                     </td>
                     <td class="px-6 py-4 flex gap-3">
+<<<<<<< HEAD
                         <a href="{{ route('create-category') }}" wire:click="editCategory({{ $category->id }})" data-bs-target="#updateCategoryModal" class="font-medium text-white bg-green-500 px-2 py-1 hover:font-bold rounded">Edit</a>
                         <a href="#" class="font-medium text-white bg-red-600 px-2 py-1 hover:font-bold rounded">Delete</a>
+=======
+
+                        <a href="#" wire:click="editCategory({{ $category->id }})" data-bs-target="#updateCategoryModal" class="font-medium text-white bg-green-500 px-2 py-1 hover:font-bold rounded">Edit</a>
+                        <a href="#" wire:click="destroyCategory({{ $category->id }})" class="font-medium text-white bg-red-600 px-2 py-1 hover:font-bold rounded">Delete</a>
+>>>>>>> 5fdb48687d5496a355026bc905fcceb2f28a6ec3
                     </td>
                 </tr>
                 @empty

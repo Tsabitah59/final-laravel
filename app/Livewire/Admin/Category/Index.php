@@ -12,7 +12,10 @@ class Index extends Component
     use WithPagination;
     protected $paginationTheme = 'tailwind';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5fdb48687d5496a355026bc905fcceb2f28a6ec3
     public $id, $name, $slug, $description, $meta_title, $meta_keyword, $meta_description, $status;
 
     public function rules() {
@@ -88,6 +91,24 @@ class Index extends Component
     //     $this->meta_keyword = $category->meta_keyword; 
     //     $this->meta_description = $category->meta_description; 
     // }
+
+    // public function deleteCategory($id) {
+    //     $this->id = $id;
+    //     // dd($id);
+    // }
+
+    public function destroyCategory($id) {
+        
+        // Category::findOrFail($this->id)->delete();
+        // session()->flash('message', 'Category Deleted Successfully');
+        // $this->resetInput();
+
+        if($id){
+            $deleteCat = Category::find($id);
+            $deleteCat->delete();
+            session()->flash('message', 'Category Deleted Successfully');
+        }
+    }
 
     public function render() {
         $categories = Category::orderBy('id', 'DESC')->paginate(10);
