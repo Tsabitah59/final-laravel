@@ -1,5 +1,8 @@
 <div class="bg-gray-100 flex-1 p-6 md:mt-16">
 
+    @include('livewire.admin.story.modal')
+
+
     <div class="flex justify-between mb-5 items-center">
         <h1 class="text-3xl">Story</h1>
         <button class="btn-shadow showModal">Add Story</button>
@@ -56,17 +59,15 @@
 
 @push('script')
 <script>
-    const modal = document.querySelector('.modal');
-    const showModal = document.querySelector('.showModal');
-    const closeModal = document.querySelectorAll('.closeModal');
-
-    showModal.addEventListener('click', function() {
-        modal.classList.remove('hidden')
+    document.querySelectorAll('.showModal').forEach(button => {
+        button.addEventListener('click', function() {
+            document.querySelector('.modal').classList.remove('hidden');
+        });
     });
 
-    closeModal.forEach(close => {
+    document.querySelectorAll('.closeModal').forEach(close => {
         close.addEventListener('click', function() {
-            modal.classList.add('hidden')
+            document.querySelector('.modal').classList.add('hidden');
         });
     });
 </script>
