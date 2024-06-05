@@ -12,6 +12,10 @@ class Index extends Component
     use WithPagination;
     protected $paginationTheme = 'tailwind';
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5fdb48687d5496a355026bc905fcceb2f28a6ec3
     public $id, $name, $slug, $description, $meta_title, $meta_keyword, $meta_description, $status;
 
     public function rules() {
@@ -74,6 +78,7 @@ class Index extends Component
 
     
     // public function editCategory($id) {
+    //     // dd($id);
     //     $this->id = $id;
 
     //     // Editable Data
