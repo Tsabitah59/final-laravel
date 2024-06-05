@@ -87,16 +87,7 @@ class Index extends Component
     //     $this->meta_description = $category->meta_description; 
     // }
 
-    // public function deleteCategory($id) {
-    //     $this->id = $id;
-    //     // dd($id);
-    // }
-
     public function destroyCategory($id) {
-        
-        // Category::findOrFail($this->id)->delete();
-        // session()->flash('message', 'Category Deleted Successfully');
-        // $this->resetInput();
 
         if($id){
             $deleteCat = Category::find($id);
