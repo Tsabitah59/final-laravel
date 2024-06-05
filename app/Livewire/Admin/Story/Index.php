@@ -17,6 +17,8 @@ class Index extends Component
     use WithFileUploads;
 
     public $category_id, $id, $name, $slug, $synopsis, $story, $image, $meta_title, $meta_keyword, $meta_description, $trending, $status;
+    public $modalClosed = false;
+
 
     public function rules()
     {
@@ -58,12 +60,17 @@ class Index extends Component
     public function storeStory() {
         $validatedData = $this->validate();
 
+        if($this->image){
+            $imagePath = $this->image->store('uploads', 'public');
+        }
+
         Story::create([
             'category_id'   =>$this->category_id,
             'name'          => $this->name,
             'slug'          => Str::slug($this->slug),
             'synopsis'      =>  $this->synopsis,
             'story'         =>  $this->story,
+            'image'         =>  $imagePath ?? null,
 
             'meta_title'        =>  $this->meta_title,
             'meta_keyword'      =>  $this->meta_keyword,
@@ -73,14 +80,12 @@ class Index extends Component
             'status'         => $this->status == true ? '1' : '0'
         ]);
 
-        if($this->image){
-            $validatedData['image'] = $this->image->store('uploads', 'public');
-        }
-
         session()->flash('message', 'Story Added Successfully');
-        $this->dispatch('closeModal');
+        // $this->dispatch('closeModal');
         $this->resetInput();
         $this->resetValidation();
+
+        $this->modalClosed = true; 
     }
 
     public function closeModal() {
@@ -90,6 +95,10 @@ class Index extends Component
     public function openModal() {
         $this->resetInput();
     }
+
+    // public function deleteStory() {
+        
+    // }
 
     public function render()
     {

@@ -33,24 +33,30 @@
             </thead>
 
             <tbody class="bg-white border border-gray-300">
+                @forelse($stories as $story)
                 <tr class="border-b-gray-300">
                     <td class="px-6 py-4">
-                        Silver
+                        {{ $story->id }}
                     </td>
+
                     <td class="px-6 py-4">
-                        Silver
+                        {{ $story->category->name }}
                     </td>
+
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Apple MacBook Pro 17"
+                        {{ $story->name }}
                     </th>
                     <td class="px-6 py-4">
-                        Laptop
+                    {{ $story->status == '1' ? 'Hidden' : 'Visible' }}
                     </td>
                     <td class="px-6 py-4 flex gap-3">
                         <a href="#" class="font-bold text-green-600 hover:underline">Edit</a>
                         <a href="#" class="font-bold text-red-600 hover:underline">Delete</a>
                     </td>
                 </tr>
+                @empty
+                <p>No Category Found</p>
+                @endforelse
             </tbody>
         </table>
     </div>
@@ -65,10 +71,19 @@
         });
     });
 
-    document.querySelectorAll('.closeModal').forEach(close => {
-        close.addEventListener('click', function() {
-            document.querySelector('.modal').classList.add('hidden');
+    // document.querySelectorAll('.closeModal').forEach(close => {
+    //     close.addEventListener('click', function() {
+    //         document.querySelector('.modal').classList.add('hidden');
+    //     });
+    // });
+
+    document.addEventListener('livewire:load', function () {
+        Livewire.hook('message.processed', (message, component) => {
+            if (message.updateQueue.find(i => i.payload.name === 'modalClosed')) {
+                document.querySelector('.modal').classList.add('hidden');
+            }
         });
     });
+
 </script>
 @endpush

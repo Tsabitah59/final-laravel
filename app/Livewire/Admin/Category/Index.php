@@ -87,6 +87,17 @@ class Index extends Component
     //     $this->meta_description = $category->meta_description; 
     // }
 
+    public function deleteCategory($id) {
+        $this->id = $id;
+        // dd($id);
+    }
+
+    public function destroyCategory() {
+        Category::findOrFail($this->id)->delete();
+        session()->flash('message', 'Category Deleted Successfully');
+        $this->resetInput();
+    }
+
     public function render() {
         $categories = Category::orderBy('id', 'DESC')->paginate(10);
         return view('livewire.admin.category.index', ['categories' => $categories])

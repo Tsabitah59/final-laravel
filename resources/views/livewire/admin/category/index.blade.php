@@ -42,7 +42,9 @@
                     </td>
                     <td class="px-6 py-4 flex gap-3">
                         <a href="#" wire:click="editCategory({{ $category->id }})" data-bs-target="#updateCategoryModal" class="font-medium text-white bg-green-500 px-2 py-1 hover:font-bold rounded">Edit</a>
-                        <a href="#" class="font-medium text-white bg-red-600 px-2 py-1 hover:font-bold rounded">Delete</a>
+                        <form wire:submit.prevent="destroyBrand" class="font-medium text-white bg-red-600 px-2 py-1 hover:font-bold rounded">
+                            <a href="#" wire:click="deleteCategory({{ $category->id }})" class="font-medium text-white bg-red-600 px-2 py-1 hover:font-bold rounded">Delete</a>
+                        </form>
                     </td>
                 </tr>
                 @empty

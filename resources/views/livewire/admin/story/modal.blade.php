@@ -15,6 +15,7 @@
                     <div class="mb-4">
                         <label class="block mb-2 text-sm font-medium">Select Category</label>
                         <select wire:model.defer="category_id" class=" text-slate-400 bg-gray-50 border border-gray-300 rounded-lg block w-full px-5 py-2" required>
+                            <option value="">SELECT</option>
                             @foreach($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
