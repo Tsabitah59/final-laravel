@@ -13,7 +13,7 @@ class Index extends Component
     protected $paginationTheme = 'tailwind';
     public $category_id;
 
-    public $category_id, $name, $slug, $description, $meta_title, $meta_keyword, $meta_description, $status;
+    public $name, $slug, $description, $meta_title, $meta_keyword, $meta_description, $status;
 
     public function rules() {
         return [
