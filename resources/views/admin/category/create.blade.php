@@ -47,7 +47,7 @@
 
                          <div class="mb-4">
                               <label class="block mb-2 text-sm font-medium">Meta Title</label>
-                              <input type="text" wire:model.defer="meta_title" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Meta Title" required />
+                              <input value="{{ $category->meta_title }}" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Meta Title" required />
                               @error('meta_title')
                               <small class="text-red-600">{{ $message }}</small>
                               @enderror
@@ -55,7 +55,7 @@
 
                          <div class="mb-4">
                               <label class="block mb-2 text-sm font-medium">Meta Keyword</label>
-                              <input type="text" wire:model.defer="meta_keyword" required class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Meta Keyword" required />
+                              <input type="text" required class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Meta Keyword" required />
                               @error('meta_keyword')
                               <small class="text-red-600">{{ $message }}</small>
                               @enderror
@@ -63,7 +63,7 @@
 
                          <div class="mb-4">
                               <label class="block mb-2 text-sm font-medium">Meta Description</label>
-                              <textarea wire:model.defer="meta_description" required class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Meta Description" required></textarea>
+                              <textarea required class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Meta Description" required></textarea>
                               @error('meta_description')
                               <small class="text-red-600">{{ $message }}</small>
                               @enderror
@@ -72,7 +72,7 @@
 
                     <div class="mb-4 flex items-start">
                          <label class="block mb-2 text-sm font-medium mr-3">Status</label>
-                         <input type="checkbox" wire:model.defer="status" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-5 h-5" placeholder="Input Category" />
+                         <input type="checkbox" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-5 h-5" placeholder="Input Category" />
                     </div>
                </div>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -11,8 +12,8 @@ class CategoryController extends Controller
         return view('admin.category.index');
     }
 
-    public function create() {
-        // dd($id);
-        return view('admin.category.create');
+    public function create($id) {
+        $category = Category::findOrFail($id);
+        return view('admin.category.create', compact('category'));
     }
 }
