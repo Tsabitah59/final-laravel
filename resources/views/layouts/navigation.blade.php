@@ -1,19 +1,55 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-[#1B3764] border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('home') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                    <a href="{{ route('home')"  class="">
+                        <x-nav-logo class="block h-9 w-auto fill-current" />
                     </a>
+                    <a href="" class="ml-4 text-[26px] text-white font-semibold ">Dhistoire</a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                </div>
+
+                <!-- new story -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                        {{ __('New Story') }}
+                    </x-nav-link>
+                </div>
+
+                <!-- Trending Story -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                        {{ __('Trending Story') }}
+                    </x-nav-link>
+                </div>
+
+                <!-- Save Story -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                        {{ __('Save Story') }}
+                    </x-nav-link>
+                </div>
+
+                <!-- Liked Story -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                        {{ __('Liked Story') }}
+                    </x-nav-link>
+                </div>
+
+                <!-- Liked Story -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                        {{ __('Recently Vicited') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -22,7 +58,7 @@
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-[#FFCA42] hover:text-[#1B3764] focus:outline-none transition ease-in-out duration-3000">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ms-1">
