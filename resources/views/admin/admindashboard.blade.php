@@ -106,13 +106,51 @@
             <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
         </div>
         <!-- end card -->
-
-
-
-
-
     </div>
     <!-- End General Report -->
+
+    <!-- Sales Overview -->
+    <div class="card mt-6">
+
+        <!-- header -->
+        <div class="card-header flex flex-row justify-between">
+            <h1 class="h6">Story Overview</h1>
+
+            <div class="flex flex-row justify-center items-center">
+
+                <a href="">
+                    <i class="fad fa-chevron-double-down mr-6"></i>
+                </a>
+
+                <a href="">
+                    <i class="fad fa-ellipsis-v"></i>
+                </a>
+
+            </div>
+
+        </div>
+        <!-- end header -->
+
+        <!-- body -->
+        <div class="card-body grid grid-cols-2 gap-6 lg:grid-cols-1">
+
+            <div class="p-8">
+                <h1 class="h2">5,337</h1>
+                <p class="text-black font-medium">Story this month</p>
+
+                <a href="#" class="btn-shadow mt-6">view details</a>
+
+            </div>
+
+            <div class="">
+                <div id="sealsOverview"></div>
+            </div>
+
+        </div>
+        <!-- end body -->
+
+    </div>
+    <!-- end Story Overview -->
 
 
 

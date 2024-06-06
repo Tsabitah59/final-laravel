@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\StoryController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,10 @@ use function Ramsey\Uuid\v1;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::controller(FrontendController::class)->group(function() {
+    Route::get('/', 'index');
 });
 
 // Route::get('/dashboard', function () {
