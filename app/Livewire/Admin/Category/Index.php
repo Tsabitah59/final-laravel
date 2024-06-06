@@ -71,20 +71,6 @@ class Index extends Component
         $this->resetInput();
     }
 
-    public function editCategory(int $id) {
-        $editCat = Category::find($id);
-        if($editCat) {
-            $this->id = $editCat->id;     
-            $this->name = $editCat->name;     
-            $this->slug = $editCat->slug;
-            $this->description = $editCat->description;
-
-            $this->meta_title = $editCat->meta_title;     
-            $this->meta_keyword = $editCat->meta_keyword;     
-            $this->meta_description = $editCat->meta_description;      
-        }
-    }
-
     public function destroyCategory($id) {
 
         if($id){
