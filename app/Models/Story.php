@@ -16,6 +16,7 @@ class Story extends Model
         'name',
         'slug',
         'synopsis',
+        'story',
         'image',
         'meta_title',
         'meta_keyword',
@@ -23,4 +24,8 @@ class Story extends Model
         'trending',
         'status',
     ];
+
+    public function category() {
+        return $this->belongsTo(Category::class, 'category_id', 'category');
+    }
 }

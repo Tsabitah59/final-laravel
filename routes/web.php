@@ -47,6 +47,7 @@ Route::controller(FrontendController::class)->group(function() {
 
 Route::controller(CategoryController::class)->group(function() {
     Route::get('/category', 'index')->name('category');
+    Route::get('/category/create', 'create')->name('create-category');
 });
 
 Route::controller(StoryController::class)->group(function() {

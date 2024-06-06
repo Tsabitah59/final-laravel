@@ -17,7 +17,9 @@ export default {
             backgroundImage: {
                 'login': 'url(../public/assets/bg-login.jpg)',
               },
-
+            button: {
+                'btnDanger': "#DAD3BE",
+              },
             colors:{
                 satu: "#1B3764",
                 dua: "#FFCA42"

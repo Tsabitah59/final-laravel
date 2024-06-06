@@ -20,4 +20,8 @@ class Category extends Model
         'meta_description',
         'status',
     ];
+
+    public function story(){
+        return $this->hasMany(Story::class, 'category_id', 'id')->where('status', '0');
+    }
 }

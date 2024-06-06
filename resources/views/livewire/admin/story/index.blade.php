@@ -1,8 +1,5 @@
 <div class="bg-gray-100 flex-1 p-6 md:mt-16">
 
-    @include('livewire.admin.story.modal')
-
-
     <div class="flex justify-between mb-5 items-center">
         <h1 class="text-3xl">Story</h1>
         <button class="btn-shadow showModal">Add Story</button>
@@ -49,8 +46,8 @@
                     {{ $story->status == '1' ? 'Hidden' : 'Visible' }}
                     </td>
                     <td class="px-6 py-4 flex gap-3">
-                        <a href="#" class="font-medium text-white bg-green-500 px-2 py-1 hover:font-bold rounded">Edit</a>
-                        <a href="#" class="font-medium text-white bg-red-600 px-2 py-1 hover:font-bold rounded">Delete</a>
+                        <a href="#" class="font-bold text-green-600 hover:underline">Edit</a>
+                        <a href="#" class="font-bold text-red-600 hover:underline">Delete</a>
                     </td>
                 </tr>
                 @empty

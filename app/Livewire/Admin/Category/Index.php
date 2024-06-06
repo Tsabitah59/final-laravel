@@ -10,8 +10,13 @@ use Illuminate\Support\Str;
 class Index extends Component
 {
     use WithPagination;
+    protected $paginationTheme = 'tailwind';
 
-    public $category_id, $name, $slug, $description, $meta_title, $meta_keyword, $meta_description, $status;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5fdb48687d5496a355026bc905fcceb2f28a6ec3
+    public $id, $name, $slug, $description, $meta_title, $meta_keyword, $meta_description, $status;
 
     public function rules() {
         return [
@@ -70,24 +75,34 @@ class Index extends Component
         $this->resetInput();
     }
 
-    public function editCategory($category_id) {
-        $this->emit('openModal', $category_id);
-        
-        $this->category_id = $category_id;
 
-        // Editable Data
-        $category = Category::findOrFail($category_id);
-        $this->name = $category->name; 
-        $this->slug = $category->slug; 
-        $this->description = $category->description; 
+    
+    // public function editCategory($id) {
+    //     // dd($id);
+    //     $this->id = $id;
 
-        $this->meta_title = $category->meta_title; 
-        $this->meta_keyword = $category->meta_keyword; 
-        $this->meta_description = $category->meta_description; 
+    //     // Editable Data
+    //     $category = Category::findOrFail($id);
+    //     $this->name = $category->name; 
+    //     $this->slug = $category->slug; 
+    //     $this->description = $category->description; 
+
+    //     $this->meta_title = $category->meta_title; 
+    //     $this->meta_keyword = $category->meta_keyword; 
+    //     $this->meta_description = $category->meta_description; 
+    // }
+
+    public function destroyCategory($id) {
+
+        if($id){
+            $deleteCat = Category::find($id);
+            $deleteCat->delete();
+            session()->flash('message', 'Category Deleted Successfully');
+        }
     }
 
     public function render() {
-        $categories = Category::orderBy('id', 'ASC')->paginate(10);
+        $categories = Category::orderBy('id', 'DESC')->paginate(10);
         return view('livewire.admin.category.index', ['categories' => $categories])
                     ->extends('layouts.adminhome')
                     ->section('content');

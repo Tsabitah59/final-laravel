@@ -4,34 +4,63 @@
 
         <!-- Header -->
         <div class="mb-5">
-            <h2 class="h4">Add Category</h2>
+            <h2 class="h4">Add Story</h2>
         </div>
 
         <hr>
 
-        <form class="mt-5" wire:submit.prevent="storeCategory">
+        <form class="mt-5" wire:submit.prevent="storeStory">
             <div class="overflow-y-scroll h-96">
                 <div class="atas">
                     <div class="mb-4">
-                        <label class="block mb-2 text-sm font-medium">Category Name</label>
-                        <input type="text" wire:model.defer="name" required class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Category" required />
+                        <label class="block mb-2 text-sm font-medium">Select Category</label>
+                        <select wire:model.defer="category_id" class=" text-slate-400 bg-gray-50 border border-gray-300 rounded-lg block w-full px-5 py-2" required>
+                            <option value="">SELECT</option>
+                            @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('name')
+                        <small class="text-red-600">{{ $message }}</small>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-medium">Story Title</label>
+                        <input type="text" wire:model.defer="name" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Title" />
                         @error('name')
                         <small class="text-red-600">{{ $message }}</small>
                         @enderror
                     </div>
         
                     <div class="mb-4">
-                        <label class="block mb-2 text-sm font-medium">Category Slug</label>
-                        <input type="text" wire:model.defer="slug" required class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Category Slug" required />
+                        <label class="block mb-2 text-sm font-medium">Story Slug</label>
+                        <input type="text" wire:model.defer="slug" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Story Slug" required />
                         @error('slug')
                         <small class="text-red-600">{{ $message }}</small>
                         @enderror
                     </div>
         
                     <div class="mb-4">
-                        <label class="block mb-2 text-sm font-medium">Description</label>
-                        <textarea wire:model.defer="description" required class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Description" required></textarea>
-                        @error('description')
+                        <label class="block mb-2 text-sm font-medium">Synopsis</label>
+                        <textarea wire:model.defer="synopsis" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Synopsis" required></textarea>
+                        @error('synopsis')
+                        <small class="text-red-600">{{ $message }}</small>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-medium">The Story</label>
+                        <textarea wire:model.defer="story" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Story" required></textarea>
+                        @error('story')
+                        <small class="text-red-600">{{ $message }}</small>
+                        @enderror
+                    </div>
+                      
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-medium">Image</label>
+                        <input type="file" wire:model.defer="image" accept="image/jpeg, image/jpg, image/png, image/gif" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" required />
+                        @error('image')
                         <small class="text-red-600">{{ $message }}</small>
                         @enderror
                     </div>
@@ -68,8 +97,13 @@
                 </div>
 
                 <div class="mb-4 flex items-start">
+                    <label class="block mb-2 text-sm font-medium mr-3">Trending</label>
+                    <input type="checkbox" wire:model.defer="trending" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-5 h-5" />
+                </div>
+
+                <div class="mb-4 flex items-start">
                     <label class="block mb-2 text-sm font-medium mr-3">Status</label>
-                    <input type="checkbox" wire:model.defer="status" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-5 h-5" placeholder="Input Category" />
+                    <input type="checkbox" wire:model.defer="status" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-5 h-5" />
                 </div>
             </div>
 
