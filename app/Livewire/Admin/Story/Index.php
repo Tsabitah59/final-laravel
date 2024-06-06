@@ -108,7 +108,7 @@ class Index extends Component
         if($id){
             $deleteStor = Story::find($id);
             $deleteStor->delete();
-            session()->flash('message', 'Category Deleted Successfully');
+            session()->flash('message', 'Story Deleted Successfully');
         }
     }
 

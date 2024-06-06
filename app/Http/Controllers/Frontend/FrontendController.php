@@ -13,4 +13,8 @@ class FrontendController extends Controller
 
         return view('dashboard', compact('trendingStory'));
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5c8209f58507bc2abab36124b4adb687bcc45aaa

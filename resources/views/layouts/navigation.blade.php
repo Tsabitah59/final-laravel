@@ -19,10 +19,17 @@
                 </div>
 
                 <!-- new story -->
+<<<<<<< HEAD
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                         {{ __('New Story') }}
                     </x-nav-link>
+=======
+                <div class=" hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                            {{ __('New Story') }}
+                        </x-nav-link>
+>>>>>>> 5c8209f58507bc2abab36124b4adb687bcc45aaa
                 </div>
 
                 <!-- Trending Story -->
@@ -49,13 +56,19 @@
                 <!-- Liked Story -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+<<<<<<< HEAD
                         {{ __('Recently Vicited') }}
+=======
+                        {{ __('Recently Visited') }}
+>>>>>>> 5c8209f58507bc2abab36124b4adb687bcc45aaa
                     </x-nav-link>
                 </div>
             </div>
 
             <!-- Settings Dropdown -->
+            @if (Route::has('login'))
             <div class="hidden sm:flex sm:items-center sm:ms-6">
+                @auth
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-[#FFCA42] hover:text-[#1B3764] focus:outline-none transition ease-in-out duration-3000">
@@ -78,15 +91,22 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
+                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
                 </x-dropdown>
+                @else
+                <a href="{{ route('login') }}" class="font-semibold transition-all duration-300 bg-dua hover:bg-amber-500 px-7 py-2 rounded-full text-white">Log in</a>
+
+                @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="ml-4 font-semibold text-white hover:text-dua transition-all duration-300">Register</a>
+                @endif
+                @endauth
             </div>
+            @endif
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
@@ -102,35 +122,84 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+
+        <!-- Navigation Links -->
+        <div class="pt-2 space-y-1">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                 {{ __('Dashboard') }}
+            </x-nav-link>
+        </div>
+
+        <!-- new story -->
+        <div class="pt-2 space-y-1">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                {{ __('New Story') }}
             </x-responsive-nav-link>
         </div>
 
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
-
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
-
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
-            </div>
+        <!-- Trending Story -->
+        <div class="pt-2 space-y-1">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                {{ __('Trending Story') }}
+            </x-responsive-nav-link>
         </div>
+
+        <!-- Save Story -->
+        <div class="pt-2 space-y-1">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                {{ __('Save Story') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <!-- Liked Story -->
+        <div class="pt-2 space-y-1">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                {{ __('Liked Story') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <!-- Liked Story -->
+        <div class="pt-2 space-y-1 mb-2">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                {{ __('Recently Visited') }}
+            </x-responsive-nav-link>
+        </div>
+    </div>
+
+    <!-- Responsive Settings Options -->
+    @if (Route::has('login'))
+    <div class="pt-4 pb-4 border-t border-gray-200">
+        @auth
+        <div class="px-4">
+            <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
+            <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+        </div>
+
+        <div class="mt-3 space-y-1">
+            <x-responsive-nav-link :href="route('profile.edit')">
+                {{ __('Profile') }}
+            </x-responsive-nav-link>
+
+            <!-- Authentication -->
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                    {{ __('Log Out') }}
+                </x-responsive-nav-link>
+            </form>
+        </div>
+        @else
+        <div class="flex justify-center items-center">
+            <a href="{{ route('login') }}" class="font-semibold transition-all duration-300 bg-dua hover:bg-amber-500 px-7 py-2 rounded-full text-white">Log in</a>
+
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}" class="ml-4 font-semibold text-white hover:text-dua transition-all duration-300">Register</a>
+            @endif
+        </div>
+        @endauth
+    </div>
+    @endif
     </div>
 </nav>

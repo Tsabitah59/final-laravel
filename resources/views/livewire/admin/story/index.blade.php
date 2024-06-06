@@ -36,8 +36,11 @@
                         {{ $story->id }}
                     </td>
 
+                    @if($story->category)
                     <td class="px-6 py-4">
+                        {{ $story->category->name }}
                     </td>
+                    @endif
 
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {{ $story->name }}
