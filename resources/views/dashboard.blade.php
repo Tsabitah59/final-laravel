@@ -56,6 +56,63 @@
                 <h4></h4>
             </div>
         </div>
+    </div> -->
+
+    <!-- Slider -->
+    <!-- Slider End -->
+
+    <!-- Category -->
+    <section class="category mx-auto mt-[60px]">
+        <div class="card flex bg-white w-[1336px] h-[140px] mx-auto p-[20px] gap-[60px] rounded-xl">
+
+            <!-- Image Text -->
+            <div class="ml-[190px]">
+                <div class="">
+                    <img src="" alt="" class="w-[100px] h-[100px]">
+                </div>
+                <h4></h4>
+            </div>
+
+            <!-- Image Text -->
+            <div>
+                <div class="">
+                    <img src="" alt="" class="w-[100px] h-[100px]">
+                </div>
+                <h4></h4>
+            </div>
+
+            <!-- Image Text -->
+            <div>
+                <div class="">
+                    <img src="" alt="" class="w-[100px] h-[100px]">
+                </div>
+                <h4></h4>
+            </div>
+
+            <!-- Image Text -->
+            <div>
+                <div class="">
+                    <img src="" alt="" class="w-[100px] h-[100px]">
+                </div>
+                <h4></h4>
+            </div>
+            
+            <!-- Image Text -->
+            <div>
+                <div class="">
+                    <img src="" alt="" class="w-[100px] h-[100px]">
+                </div>
+                <h4></h4>
+            </div>
+
+            <!-- Image Text -->
+            <div>
+                <div class="">
+                    <img src="" alt="" class="w-[100px] h-[100px]">
+                </div>
+                <h4></h4>
+            </div>
+        </div>
     </section>
     <!-- Category -->
 
@@ -64,7 +121,7 @@
         <h3 class="text-[27px] font-semibold mt-[70px] text-[#1B3764]">Trending Story</h3>
         <div class="flex">
             <hr class="border-t-4 border-[#1B3764] w-20 mt-2">
-            <hr class="border-t-4 border-[#1B3764] w-16 mt-2">
+            <hr class="border-t-4 border-[#1B3764] w-20 mt-2">
         </div>
 
 
@@ -78,7 +135,7 @@
                 @foreach($trendingStory as $story)
                 <div class="group card-item shadow-sm shadow-transparent bg-white hover:bg-[#1B3764] w-[250px] h-[330px] pt-3 rounded-lg pl-3 pr-3 transition-all duration-700">
                     <a class="card-img">
-                        <img src="" alt="" class="w-[223px] h-[156px] mx-auto" style="border-radius: 10px 10px 0 0;">
+                        <img src="{{ assets($story->storyImage->image) }}" alt="" class="w-[223px] h-[156px] mx-auto" style="border-radius: 10px 10px 0 0;">
                     </a>
                     <div class="text-card">
                         <h3 class="mt-[9px] text-[#1B3764]  group-hover:text-white text-[18px] transition-all duration-700" style="font-family: 'Quicksand', sans-serif; font-weight: 600;">{{ $story->name}}</h3>

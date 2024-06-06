@@ -43,6 +43,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::controller(FrontendController::class)->group(function() {
+    Route::get('/', 'index');
+});
+
 // Route::get('/category', App\Livewire\Admin\Category\Index::class)->name('category');
 
 Route::controller(CategoryController::class)->group(function() {

@@ -19,10 +19,17 @@
                 </div>
 
                 <!-- new story -->
+<<<<<<< HEAD
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                        {{ __('New Story') }}
+                    </x-nav-link>
+=======
                 <div class=" hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                             {{ __('New Story') }}
                         </x-nav-link>
+>>>>>>> 5c8209f58507bc2abab36124b4adb687bcc45aaa
                 </div>
 
                 <!-- Trending Story -->
@@ -49,7 +56,11 @@
                 <!-- Liked Story -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+<<<<<<< HEAD
+                        {{ __('Recently Vicited') }}
+=======
                         {{ __('Recently Visited') }}
+>>>>>>> 5c8209f58507bc2abab36124b4adb687bcc45aaa
                     </x-nav-link>
                 </div>
             </div>
@@ -60,7 +71,7 @@
                 @auth
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-[#FFCA42] hover:text-[#1B3764] focus:outline-none transition ease-in-out duration-3000">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ms-1">
