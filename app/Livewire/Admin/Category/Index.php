@@ -71,33 +71,21 @@ class Index extends Component
         $this->resetInput();
     }
 
+    public function editCategory(int $id) {
+        $editCat = Category::find($id);
+        if($editCat) {
+            $this->id = $editCat->id;     
+            $this->name = $editCat->name;     
+            $this->slug = $editCat->slug;
+            $this->description = $editCat->description;
 
-    
-    // public function editCategory($id) {
-    //     // dd($id);
-    //     $this->id = $id;
-
-    //     // Editable Data
-    //     $category = Category::findOrFail($id);
-    //     $this->name = $category->name; 
-    //     $this->slug = $category->slug; 
-    //     $this->description = $category->description; 
-
-    //     $this->meta_title = $category->meta_title; 
-    //     $this->meta_keyword = $category->meta_keyword; 
-    //     $this->meta_description = $category->meta_description; 
-    // }
-
-    // public function deleteCategory($id) {
-    //     $this->id = $id;
-    //     // dd($id);
-    // }
+            $this->meta_title = $editCat->meta_title;     
+            $this->meta_keyword = $editCat->meta_keyword;     
+            $this->meta_description = $editCat->meta_description;      
+        }
+    }
 
     public function destroyCategory($id) {
-        
-        // Category::findOrFail($this->id)->delete();
-        // session()->flash('message', 'Category Deleted Successfully');
-        // $this->resetInput();
 
         if($id){
             $deleteCat = Category::find($id);

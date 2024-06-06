@@ -12,8 +12,11 @@ class CategoryController extends Controller
         return view('admin.category.index');
     }
 
-    public function create($id) {
-        $category = Category::findOrFail($id);
-        return view('admin.category.create', compact('category'));
+    public function create() {
+        // dd($id);
+        // $category = Category::findOrFail($id);
+        return view('livewire.admin.category.create');
     }
+
+    
 }

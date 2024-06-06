@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\StoryController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::controller(FrontendController::class)->group(function() {
+    Route::get('/', 'index');
+});
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
@@ -42,7 +47,7 @@ Route::middleware('auth')->group(function () {
 
 Route::controller(CategoryController::class)->group(function() {
     Route::get('/category', 'index')->name('category');
-    Route::get('/category/create', 'create')->name('create-category');
+    Route::get('/category/create/{id}', 'create')->name('create-category');
 });
 
 Route::controller(StoryController::class)->group(function() {

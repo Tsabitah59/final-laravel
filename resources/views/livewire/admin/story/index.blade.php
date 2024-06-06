@@ -2,6 +2,11 @@
 
     @include('livewire.admin.story.modal')
 
+    
+    @if (session('message'))
+            <div class="alert alert-default mb-5">{{ session('message') }}</div>
+    @endif
+
 
     <div class="flex justify-between mb-5 items-center">
         <h1 class="text-3xl">Story</h1>
@@ -39,8 +44,11 @@
                         {{ $story->id }}
                     </td>
 
+                    @if($story->category)
                     <td class="px-6 py-4">
+                        {{ $story->category->name }}
                     </td>
+                    @endif
 
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {{ $story->name }}
@@ -50,7 +58,7 @@
                     </td>
                     <td class="px-6 py-4 flex gap-3">
                         <a href="#" class="font-medium text-white bg-green-500 px-2 py-1 hover:font-bold rounded">Edit</a>
-                        <a href="#" class="font-medium text-white bg-red-600 px-2 py-1 hover:font-bold rounded">Delete</a>
+                        <a href="#" wire:click="destroyStory({{ $story->id }})" class="font-medium text-white bg-red-600 px-2 py-1 hover:font-bold rounded">Delete</a>
                     </td>
                 </tr>
                 @empty
@@ -70,19 +78,10 @@
         });
     });
 
-    // document.querySelectorAll('.closeModal').forEach(close => {
-    //     close.addEventListener('click', function() {
-    //         document.querySelector('.modal').classList.add('hidden');
-    //     });
-    // });
-
-    document.addEventListener('livewire:load', function () {
-        Livewire.hook('message.processed', (message, component) => {
-            if (message.updateQueue.find(i => i.payload.name === 'modalClosed')) {
-                document.querySelector('.modal').classList.add('hidden');
-            }
+    document.querySelectorAll('.closeModal').forEach(close => {
+        close.addEventListener('click', function() {
+            document.querySelector('.modal').classList.add('hidden');
         });
     });
-
 </script>
 @endpush
