@@ -29,6 +29,8 @@ Route::get('/', function () {
 
 Route::controller(FrontendController::class)->group(function() {
     Route::get('/', 'index');
+    Route::get('/collections', 'newStories')->name('new-stories');
+    // Route::get('/collections', 'trendingStories')->name('trending-stories');
 });
 
 // Route::get('/dashboard', function () {
@@ -43,12 +45,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::controller(FrontendController::class)->group(function() {
-    Route::get('/', 'index');
-});
-
-// Route::get('/category', App\Livewire\Admin\Category\Index::class)->name('category');
 
 Route::controller(CategoryController::class)->group(function() {
     Route::get('/category', 'index')->name('category');
