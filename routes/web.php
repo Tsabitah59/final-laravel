@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Admin\Category\Edit;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 
@@ -53,7 +54,7 @@ Route::controller(CategoryController::class)->group(function() {
     Route::get('/category', 'index')->name('category');
 });
 
-Route::livewire('/edit/{id}', 'category.edit')->layout('layouts.adminhome')->name('category.edit');
+// Route::get('/edit-category{id}', Edit::class)->name('editCategory');
 
 Route::controller(StoryController::class)->group(function() {
     Route::get('/story', 'index')->name('story');

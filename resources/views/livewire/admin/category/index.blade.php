@@ -8,7 +8,7 @@
 
     <div class="flex justify-between mb-5 items-center">
         <h1 class="text-3xl">Category</h1>
-        <button class="btn-shadow showModal">Add Category</button>
+        <button class="btn-shadow showModal1">Add Category</button>
     </div>
 
     <hr>
@@ -45,7 +45,7 @@
                         {{ $category->status == '1' ? 'Hidden' : 'Visible' }}
                     </td>
                     <td class="px-6 py-4 flex gap-3">
-                        <a href="#" wire:click="editCategory({{ $category->id }})" data-bs-target="#updateCategoryModal" class="font-medium text-white bg-green-500 px-2 py-1 hover:font-bold rounded">Edit</a>
+                        <a href=""class="font-medium text-white bg-green-500 px-2 py-1 hover:font-bold rounded">Edit</a>
                         <a href="#" wire:click="destroyCategory({{ $category->id }})" class="font-medium text-white bg-red-600 px-2 py-1 hover:font-bold rounded">Delete</a>
                     </td>
                 </tr>
@@ -59,7 +59,7 @@
 
 @push('script')
 <script>
-    document.querySelectorAll('.showModal').forEach(button => {
+    document.querySelectorAll('.showModal1').forEach(button => {
         button.addEventListener('click', function() {
             document.querySelector('.modal').classList.remove('hidden');
         });
