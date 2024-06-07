@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="bg-[#1B3764] text-white p-8 mt-[40px]">
+<footer class="bg-[#1B3764] text-white p-8 mt-[60px]">
       <div class="container mx-auto flex flex-wrap justify-between">
           <div class="w-full md:w-1/2 lg:w-1/4 mb-6">
               <h3 class="text-[30px] font-semibold mb-4 flex text-white">
