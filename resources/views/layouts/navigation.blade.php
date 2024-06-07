@@ -19,17 +19,10 @@
                 </div>
 
                 <!-- new story -->
-<<<<<<< HEAD
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                         {{ __('New Story') }}
                     </x-nav-link>
-=======
-                <div class=" hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
-                            {{ __('New Story') }}
-                        </x-nav-link>
->>>>>>> 5c8209f58507bc2abab36124b4adb687bcc45aaa
                 </div>
 
                 <!-- Trending Story -->
@@ -56,11 +49,7 @@
                 <!-- Liked Story -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
-<<<<<<< HEAD
-                        {{ __('Recently Vicited') }}
-=======
                         {{ __('Recently Visited') }}
->>>>>>> 5c8209f58507bc2abab36124b4adb687bcc45aaa
                     </x-nav-link>
                 </div>
             </div>
@@ -168,7 +157,7 @@
 
     <!-- Responsive Settings Options -->
     @if (Route::has('login'))
-    <div class="pt-4 pb-4 border-t border-gray-200">
+    <div class="pt-4 pb-4 border-t border-gray-200 md:hidden">
         @auth
         <div class="px-4">
             <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>

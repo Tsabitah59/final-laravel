@@ -4,117 +4,6 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-    <!-- Category -->
-    <section class="category mx-auto mt-[60px]">
-        <div class="card flex bg-white w-[1336px] h-[140px] mx-auto p-[20px] gap-[60px] rounded-xl">
-
-            <!-- Image Text -->
-            <div class="ml-[190px]">
-                <div class="">
-                    <img src="" alt="" class="w-[100px] h-[100px]">
-                </div>
-                <h4></h4>
-            </div>
-
-            <!-- Image Text -->
-            <div>
-                <div class="">
-                    <img src="" alt="" class="w-[100px] h-[100px]">
-                </div>
-                <h4></h4>
-            </div>
-
-            <!-- Image Text -->
-            <div>
-                <div class="">
-                    <img src="" alt="" class="w-[100px] h-[100px]">
-                </div>
-                <h4></h4>
-            </div>
-
-            <!-- Image Text -->
-            <div>
-                <div class="">
-                    <img src="" alt="" class="w-[100px] h-[100px]">
-                </div>
-                <h4></h4>
-            </div>
-
-            <!-- Image Text -->
-            <div>
-                <div class="">
-                    <img src="" alt="" class="w-[100px] h-[100px]">
-                </div>
-                <h4></h4>
-            </div>
-
-            <!-- Image Text -->
-            <div>
-                <div class="">
-                    <img src="" alt="" class="w-[100px] h-[100px]">
-                </div>
-                <h4></h4>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- Slider -->
-    <!-- Slider End -->
-
-    <!-- Category -->
-    <section class="category mx-auto mt-[60px]">
-        <div class="card flex bg-white w-[1336px] h-[140px] mx-auto p-[20px] gap-[60px] rounded-xl">
-
-            <!-- Image Text -->
-            <div class="ml-[190px]">
-                <div class="">
-                    <img src="" alt="" class="w-[100px] h-[100px]">
-                </div>
-                <h4></h4>
-            </div>
-
-            <!-- Image Text -->
-            <div>
-                <div class="">
-                    <img src="" alt="" class="w-[100px] h-[100px]">
-                </div>
-                <h4></h4>
-            </div>
-
-            <!-- Image Text -->
-            <div>
-                <div class="">
-                    <img src="" alt="" class="w-[100px] h-[100px]">
-                </div>
-                <h4></h4>
-            </div>
-
-            <!-- Image Text -->
-            <div>
-                <div class="">
-                    <img src="" alt="" class="w-[100px] h-[100px]">
-                </div>
-                <h4></h4>
-            </div>
-            
-            <!-- Image Text -->
-            <div>
-                <div class="">
-                    <img src="" alt="" class="w-[100px] h-[100px]">
-                </div>
-                <h4></h4>
-            </div>
-
-            <!-- Image Text -->
-            <div>
-                <div class="">
-                    <img src="" alt="" class="w-[100px] h-[100px]">
-                </div>
-                <h4></h4>
-            </div>
-        </div>
-    </section>
-    <!-- Category -->
 
     <!-- New Story -->
     <section class="ml-[99px] itemm-center mx-auto">
@@ -158,5 +47,6 @@
         <h3>No trending stories available.</h3>
         @endif
     </section>
+    <!-- New Story End -->
 
 </x-app-layout>
