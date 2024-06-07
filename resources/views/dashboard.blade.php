@@ -235,7 +235,7 @@
                         </div>
                         <div class="card-btn flex gap-[30px]">
                             <div>
-                                <button class="btn mt-5 text-white bg-[#1B3764]  group-hover:bg-[#FFCA42] rounded-full w-[144px] h-[30px] transition-all duration-700">Read More</button>
+                                <button href="{{ url(/story.$stoy->slug) }}" class="btn mt-5 text-white bg-[#1B3764]  group-hover:bg-[#FFCA42] rounded-full w-[144px] h-[30px] transition-all duration-700">Read More</button>
                             </div>
                             <div class="mt-[23px] flex gap-3">
                                 <i class="ri-heart-3-fill text-[#FFCA42]  group-hover:text-white text-xl transition-all duration-700"></i>
@@ -247,7 +247,7 @@
                 </div>
             </div>
             @else
-            <h3>No trending stories available.</h3>
+            <h3>No new stories available.</h3>
             @endif
         </section>
 
