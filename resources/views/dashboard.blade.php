@@ -232,7 +232,7 @@
                 @foreach($trendingStory as $story)
                 <div class="group card-item shadow-sm shadow-transparent bg-white hover:bg-[#1B3764] w-[250px] h-[330px] pt-3 rounded-lg pl-3 pr-3 transition-all duration-700">
                     <a class="card-img">
-                        <img src="{{ assets($story->storyImage->image) }}" alt="" class="w-[223px] h-[156px] mx-auto" style="border-radius: 10px 10px 0 0;">
+                        <img src="{{ asset($story->image) }}" alt="" class="w-[223px] h-[156px] mx-auto" style="border-radius: 10px 10px 0 0;">
                     </a>
                     <div class="text-card">
                         <h3 class="mt-[9px] text-[#1B3764]  group-hover:text-white text-[18px] transition-all duration-700" style="font-family: 'Quicksand', sans-serif; font-weight: 600;">{{ $story->name}}</h3>
@@ -240,7 +240,11 @@
                     </div>
                     <div class="card-btn flex gap-[30px]">
                         <div>
+<<<<<<< HEAD
                             <button href="{{ url(story.$stoy->slug) }}" class="btn mt-5 text-white bg-[#1B3764]  group-hover:bg-[#FFCA42] rounded-full w-[144px] h-[30px] transition-all duration-700">Read More</button>
+=======
+                            <a href="{{ url($story->slug) }}" class="btn mt-5 text-white bg-[#1B3764]  group-hover:bg-[#FFCA42] rounded-full w-[144px] h-[30px] transition-all duration-700">Read More</a>
+>>>>>>> 3db636e89e12364c4cebbb6e15735f0bf85db8b1
                         </div>
                         <div class="mt-[23px] flex gap-3">
                             <i class="ri-heart-3-fill text-[#FFCA42]  group-hover:text-white text-xl transition-all duration-700"></i>

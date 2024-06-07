@@ -51,7 +51,10 @@ Route::controller(CategoryController::class)->group(function() {
     Route::get('/category', 'index')->name('category');
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3db636e89e12364c4cebbb6e15735f0bf85db8b1
 Route::controller(StoryController::class)->group(function() {
     Route::get('/story', 'index')->name('story');
 });
