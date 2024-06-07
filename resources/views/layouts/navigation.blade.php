@@ -157,7 +157,7 @@
 
     <!-- Responsive Settings Options -->
     @if (Route::has('login'))
-    <div class="pt-4 pb-4 border-t border-gray-200">
+    <div class="pt-4 pb-4 border-t border-gray-200 md:hidden">
         @auth
         <div class="px-4">
             <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
