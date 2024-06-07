@@ -1,1 +1,5 @@
-@extends('layouts.adminhome') @section('content') <div class="bg-gray-100 flex-1 p-6 md:mt-16"> <div class="flex justify-between mb-5 items-center"> <h1 class="text-3xl">Edit Category</h1> <a href="{{ route('category') }}" class="btn-shadow showModal">Back</a> </div> <hr> <div class="relative overflow-x-auto mt-5"> <form class="mt-5" wire:submit.prevent="storeCategory"> @csrf <div class="h-auto"> <div> <div class="mb-4"> <label class="block mb-2 text-sm font-medium">Category Name</label> <input type="text" name="name" required class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full px-5 py-2" placeholder="Input Category" required /> @error('name') <small class="text-red-600">{{ $message }}</small> ...
+@extends('layouts.adminhome')
+
+@section('content')
+<livewire:admin.category.create></livewire>
+@endsection
