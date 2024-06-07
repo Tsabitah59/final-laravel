@@ -3,7 +3,7 @@
     @include('livewire.admin.category.modal')
 
     @if (session('message'))
-            <div class="alert alert-default mb-5">{{ session('message') }}</div>
+        <div class="alert alert-default mb-5">{{ session('message') }}</div>
     @endif
 
     <div class="flex justify-between mb-5 items-center">
@@ -45,7 +45,7 @@
                         {{ $category->status == '1' ? 'Hidden' : 'Visible' }}
                     </td>
                     <td class="px-6 py-4 flex gap-3">
-                        <a href=""class="font-medium text-white bg-green-500 px-2 py-1 hover:font-bold rounded">Edit</a>
+                        <a href="#"class="font-medium text-white bg-green-500 px-2 py-1 hover:font-bold rounded">Edit</a>
                         <a href="#" wire:click="destroyCategory({{ $category->id }})" class="font-medium text-white bg-red-600 px-2 py-1 hover:font-bold rounded">Delete</a>
                     </td>
                 </tr>

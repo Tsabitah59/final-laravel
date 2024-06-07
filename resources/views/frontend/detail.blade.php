@@ -1,3 +1,4 @@
+
 <div class="container mx-auto mt-[20px]">
      @foreach($trendingStory as $story)
      <!-- image -->
