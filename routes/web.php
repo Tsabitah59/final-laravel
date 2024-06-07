@@ -30,6 +30,7 @@ Route::get('/', function () {
 Route::controller(FrontendController::class)->group(function() {
     Route::get('/', 'index');
     Route::get('/collections', 'newStories')->name('new-stories');
+    // Route::get('/collections', 'detailStories')->name('detail-stories');
     // Route::get('/collections', 'trendingStories')->name('trending-stories');
 });
 
@@ -50,7 +51,6 @@ Route::controller(CategoryController::class)->group(function() {
     Route::get('/category', 'index')->name('category');
 });
 
-Route::livewire('/edit/{id}', 'category.edit')->layout('layouts.adminhome')->name('category.edit');
 
 Route::controller(StoryController::class)->group(function() {
     Route::get('/story', 'index')->name('story');

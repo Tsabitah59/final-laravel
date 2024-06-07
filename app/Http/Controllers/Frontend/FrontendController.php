@@ -19,6 +19,11 @@ class FrontendController extends Controller
         return view('frontend.collections.new-story', compact('newStories'));
     }
 
+    // public function detailStories() {
+    //     $detailStories = Story::latest()->take(16)->get();
+    //     return view('frontend.collections.detail-story', compact('detailStories'));
+    // }
+
     // public function trendingStories() {
     //     $trendingStories = Story::latest()->take(16)->get();
     //     return view('frontend.collections.trending-story', compact('trendingStories'));
