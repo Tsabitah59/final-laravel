@@ -54,7 +54,7 @@ Route::controller(CategoryController::class)->group(function() {
     Route::get('/category', 'index')->name('category');
 });
 
-// Route::get('/edit-category{id}', Edit::class)->name('editCategory');
+Route::livewire('/edit/{id}', 'category.edit')->layout('layouts.adminhome')->name('category.edit');
 
 Route::controller(StoryController::class)->group(function() {
     Route::get('/story', 'index')->name('story');
