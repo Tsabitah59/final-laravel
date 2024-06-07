@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('home')"  class="">
+                    <a href="{{ #"  class="">
                         <x-nav-logo class="block h-9 w-auto fill-current" />
                     </a>
                     <a href="" class="ml-4 text-[26px] text-white font-semibold ">Dhistoire</a>
@@ -13,42 +13,42 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                    <x-nav-link  class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
 
                 <!-- new story -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                    <x-nav-link :href="route('new-stories')" :active="request()->routeIs('new-stories')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                         {{ __('New Story') }}
                     </x-nav-link>
                 </div>
 
                 <!-- Trending Story -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                    <x-nav-link class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                         {{ __('Trending Story') }}
                     </x-nav-link>
                 </div>
 
                 <!-- Save Story -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                    <x-nav-link  class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                         {{ __('Save Story') }}
                     </x-nav-link>
                 </div>
 
                 <!-- Liked Story -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                    <x-nav-link  class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                         {{ __('Liked Story') }}
                     </x-nav-link>
                 </div>
 
                 <!-- Liked Story -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+                    <x-nav-link  class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                         {{ __('Recently Visited') }}
                     </x-nav-link>
                 </div>
@@ -114,42 +114,42 @@
 
         <!-- Navigation Links -->
         <div class="pt-2 space-y-1">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+            <x-responsive-nav-link  class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                 {{ __('Dashboard') }}
             </x-nav-link>
         </div>
 
         <!-- new story -->
         <div class="pt-2 space-y-1">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+            <x-responsive-nav-link  class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                 {{ __('New Story') }}
             </x-responsive-nav-link>
         </div>
 
         <!-- Trending Story -->
         <div class="pt-2 space-y-1">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+            <x-responsive-nav-link  class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                 {{ __('Trending Story') }}
             </x-responsive-nav-link>
         </div>
 
         <!-- Save Story -->
         <div class="pt-2 space-y-1">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+            <x-responsive-nav-link  class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                 {{ __('Save Story') }}
             </x-responsive-nav-link>
         </div>
 
         <!-- Liked Story -->
         <div class="pt-2 space-y-1">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+            <x-responsive-nav-link  class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                 {{ __('Liked Story') }}
             </x-responsive-nav-link>
         </div>
 
         <!-- Liked Story -->
         <div class="pt-2 space-y-1 mb-2">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-white hover:text-[#FFCA42] duration-300 transition-all">
+            <x-responsive-nav-link  class="text-white hover:text-[#FFCA42] duration-300 transition-all">
                 {{ __('Recently Visited') }}
             </x-responsive-nav-link>
         </div>

@@ -239,7 +239,7 @@
                     </div>
                     <div class="card-btn flex gap-[30px]">
                         <div>
-                            <a href="{{ url(story.$story->slug) }}" class="btn mt-5 text-white bg-[#1B3764]  group-hover:bg-[#FFCA42] rounded-full w-[144px] h-[30px] transition-all duration-700">Read More</a>
+                            <a href="{{ url($story->slug) }}" class="btn mt-5 text-white bg-[#1B3764]  group-hover:bg-[#FFCA42] rounded-full w-[144px] h-[30px] transition-all duration-700">Read More</a>
                         </div>
                         <div class="mt-[23px] flex gap-3">
                             <i class="ri-heart-3-fill text-[#FFCA42]  group-hover:text-white text-xl transition-all duration-700"></i>
