@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="bg-[#1B3764] w-full h-[250px] p-[80px]">
+    <div class="bg-[#1B3764] w-full h-[250px] p-[50px]">
         <h2 class="font-semibold text-[40px] text-white leading-tight text-center">
             {{ __('New Story') }}
         </h2>

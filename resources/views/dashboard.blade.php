@@ -60,7 +60,7 @@
 
     <!-- Category -->
     <section class="category mx-auto mt-[60px]">
-        <div class="card flex bg-white w-[1336px] h-[140px] mx-auto p-[20px] gap-[60px] rounded-xl">
+        <div class="card flex bg-[#1B3764] w-[1336px] h-[140px] mx-auto p-[20px] gap-[60px] rounded-xl">
 
             <!-- Image Text -->
             <div class="ml-[190px]">
@@ -117,7 +117,7 @@
 
         <!-- Category -->
         <section class="category mx-auto mt-[60px]">
-            <div class="card flex bg-white w-[1336px] h-[140px] mx-auto p-[20px] gap-[60px] rounded-xl">
+            <div class="card flex bg-[#FFCA42] w-[1336px] h-[140px] mx-auto p-[20px] gap-[60px] rounded-xl">
 
                 <!-- Image Text -->
                 <div class="ml-[190px]">
@@ -189,6 +189,7 @@
                     @foreach($trendingStory as $story)
                     <div class="group card-item shadow-sm shadow-transparent bg-white hover:bg-[#1B3764] w-[617px] h-[166px] pt-3 rounded-lg pl-3 pr-3 transition-all duration-700">
                         <a class="card-img">
+
                         </a>
                         <div class="text-card">
                             <h3 class="mt-[9px] text-[#1B3764]  group-hover:text-white text-[18px] transition-all duration-700" style="font-family: 'Quicksand', sans-serif; font-weight: 600;">{{ $story->name}}</h3>
@@ -239,7 +240,7 @@
                     </div>
                     <div class="card-btn flex gap-[30px] mt-6 items-center">
                         <div>
-                            <a href="{{ url($story->slug) }}" class="btn mt-5 text-white bg-[#1B3764]  group-hover:bg-[#FFCA42] rounded-full w-[144px] h-[30px] px-6 py-2 transition-all duration-700">Read More</a>
+                            <a href="{{ url($story->slug) }}" class="btn mt-5 text-white bg-[#1B3764]  group-hover:bg-[#FFCA42] rounded-full px-7 py-2 transition-all duration-700">Read More</a>
                         </div>
                         <div class="flex gap-3">
                             <i class="ri-heart-3-fill text-[#FFCA42]  group-hover:text-white text-xl transition-all duration-700"></i>
@@ -254,5 +255,8 @@
         <h3>No new stories available.</h3>
         @endif
     </section>
+
+    <x-footer>
+    </x-footer>
 
 </x-app-layout>

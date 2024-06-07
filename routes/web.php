@@ -30,6 +30,7 @@ Route::get('/', function () {
 Route::controller(FrontendController::class)->group(function() {
     Route::get('/', 'index');
     Route::get('/collections', 'newStories')->name('new-stories');
+    // Route::get('/collections', 'detailStories')->name('detail-stories');
     // Route::get('/collections', 'trendingStories')->name('trending-stories');
 });
 
