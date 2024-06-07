@@ -1,5 +1,5 @@
 <!-- Add Modal -->
-<div wire:ignore.self id="addCategoryModal" class="modal fixed z-20 h-screen w-full left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+<div wire:ignore.self class="modal fixed z-20 h-screen w-full left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
     <div class="bg-white rounded-lg shadow-sm w-1/3 px-6 py-6">
 
         <!-- Header -->

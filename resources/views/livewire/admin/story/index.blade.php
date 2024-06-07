@@ -1,5 +1,7 @@
 <div class="bg-gray-100 flex-1 p-6 md:mt-16">
 
+    @include('livewire.admin.story.modal')
+
     <div class="flex justify-between mb-5 items-center">
         <h1 class="text-3xl">Story</h1>
         <button class="btn-shadow showModal">Add Story</button>
